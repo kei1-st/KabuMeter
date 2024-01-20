@@ -10,8 +10,6 @@ export default function Result({ initialInvestment, annualInvestment, expectedRe
     duration,
   });
 
-  console.log(annualData);
-
   let totalInterest = 0;
   let capital = initialInvestment;
 

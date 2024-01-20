@@ -35,7 +35,12 @@ function App() {
         setExpectedReturnValue={setExpectedReturnValue}
         setDurationValue={setDurationValue}
       />
-      <Result />
+      <Result
+        initialInvestment={initialInvestment}
+        annualInvestment={annualInvestment}
+        expectedReturn={expectedReturn}
+        duration={duration}
+      />
     </>
   );
 }

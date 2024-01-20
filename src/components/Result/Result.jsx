@@ -1,7 +1,8 @@
 import './Result.css';
+import { formatter, calculateInvestmentResults } from '../../util/investment';
 import TABLE_HEADERS from './tableHeaders.js';
 
-export default function Result() {
+export default function Result({ initialInvestment, annualInvestment, expectedReturn, duration }) {
   return (
     <div id="result">
       <table align="center">
@@ -14,10 +15,10 @@ export default function Result() {
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
+            <td>{formatter.format(initialInvestment)}</td>
+            <td>{formatter.format(annualInvestment)}</td>
+            <td>{formatter.format(expectedReturn)}</td>
+            <td>{duration}</td>
             <td>5</td>
           </tr>
         </tbody>

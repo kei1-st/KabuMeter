@@ -3,6 +3,15 @@ import { formatter, calculateInvestmentResults } from '../../util/investment';
 import TABLE_HEADERS from './tableHeaders.js';
 
 export default function Result({ initialInvestment, annualInvestment, expectedReturn, duration }) {
+  let annualData = calculateInvestmentResults({
+    initialInvestment,
+    annualInvestment,
+    expectedReturn,
+    duration,
+  });
+
+  console.log(annualData);
+
   return (
     <div id="result">
       <table align="center">
@@ -14,13 +23,15 @@ export default function Result({ initialInvestment, annualInvestment, expectedRe
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>{formatter.format(initialInvestment)}</td>
-            <td>{formatter.format(annualInvestment)}</td>
-            <td>{formatter.format(expectedReturn)}</td>
-            <td>{duration}</td>
-            <td>5</td>
-          </tr>
+          {annualData.map((data) => (
+            <tr>
+              <td>{data.year}</td>
+              <td>{formatter.format(data.annualInvestment)}</td>
+              <td>{formatter.format(data.interest)}</td>
+              <td>{0}</td>
+              <td>{formatter.format(data.valueEndOfYear)}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

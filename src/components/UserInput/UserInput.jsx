@@ -16,24 +16,24 @@ export default function UserInput({
       <div class="input-group">
         <div>
           <label>INITIAL INVESTMENT</label>
-          <input type="number" val={initialInvestment} onChange={setInitialInvestmentValue} />
+          <input type="number" value={initialInvestment} onChange={setInitialInvestmentValue} />
           {console.log(initialInvestment)}
         </div>
         <div>
           <label>ANNUAL INVESTMENT</label>
-          <input type="number" val={annualInvestment} onChange={setAnnualInvestmentValue} />
+          <input type="number" value={annualInvestment} onChange={setAnnualInvestmentValue} />
           {console.log(annualInvestment)}
         </div>
       </div>
       <div class="input-group">
         <div>
           <label>EXPECTED RETURN</label>
-          <input type="number" val={expectedReturn} onChange={setExpectedReturnValue} />
+          <input type="number" value={expectedReturn} onChange={setExpectedReturnValue} />
           {console.log(expectedReturn)}
         </div>
         <div>
           <label>DURATION</label>
-          <input type="number" cal={duration} onChange={setDurationValue} />
+          <input type="number" value={duration} onChange={setDurationValue} />
           {console.log(duration)}
         </div>
       </div>

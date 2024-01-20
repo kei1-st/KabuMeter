@@ -12,6 +12,9 @@ export default function Result({ initialInvestment, annualInvestment, expectedRe
 
   console.log(annualData);
 
+  let totalInterest = 0;
+  let capital = initialInvestment;
+
   return (
     <div id="result">
       <table align="center">
@@ -23,15 +26,19 @@ export default function Result({ initialInvestment, annualInvestment, expectedRe
           </tr>
         </thead>
         <tbody>
-          {annualData.map((data) => (
-            <tr key={data.year}>
-              <td>{data.year}</td>
-              <td>{formatter.format(data.annualInvestment)}</td>
-              <td>{formatter.format(data.interest)}</td>
-              <td>{0}</td>
-              <td>{formatter.format(data.valueEndOfYear)}</td>
-            </tr>
-          ))}
+          {annualData.map((data) => {
+            totalInterest += data.interest;
+            capital += data.annualInvestment;
+            return (
+              <tr key={data.year}>
+                <td>{data.year}</td>
+                <td>{formatter.format(data.valueEndOfYear)}</td>
+                <td>{formatter.format(data.interest)}</td>
+                <td>{formatter.format(totalInterest)}</td>
+                <td>{formatter.format(capital)}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

@@ -1,5 +1,4 @@
 import './UserInput.css';
-import { useState } from 'react';
 
 export default function UserInput({
   initialInvestment,

@@ -10,16 +10,16 @@ function App() {
   const [duration, setDuration] = useState(10);
 
   function setInitialInvestmentValue(e) {
-    setInitialInvestment(e.target.value);
+    setInitialInvestment(Number(e.target.value));
   }
   function setAnnualInvestmentValue(e) {
-    setAnnualInvestment(e.target.value);
+    setAnnualInvestment(Number(e.target.value));
   }
   function setExpectedReturnValue(e) {
-    setExpectedReturn(e.target.value);
+    setExpectedReturn(Number(e.target.value));
   }
   function setDurationValue(e) {
-    setDuration(e.target.value);
+    setDuration(Number(e.target.value));
   }
 
   return (

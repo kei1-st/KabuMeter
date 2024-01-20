@@ -2,16 +2,11 @@ import './Result.css';
 import { formatter, calculateInvestmentResults } from '../../util/investment';
 import TABLE_HEADERS from './tableHeaders.js';
 
-export default function Result({ initialInvestment, annualInvestment, expectedReturn, duration }) {
-  let annualData = calculateInvestmentResults({
-    initialInvestment,
-    annualInvestment,
-    expectedReturn,
-    duration,
-  });
+export default function Result({ data }) {
+  let annualData = calculateInvestmentResults(data);
 
   let totalInterest = 0;
-  let capital = initialInvestment;
+  let capital = data.initialInvestment;
 
   return (
     <table id="result">

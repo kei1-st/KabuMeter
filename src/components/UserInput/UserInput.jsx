@@ -1,15 +1,14 @@
 import './UserInput.css';
 
 export default function UserInput({
-  initialInvestment,
-  annualInvestment,
-  expectedReturn,
-  duration,
+  data,
   setInitialInvestmentValue,
   setAnnualInvestmentValue,
   setExpectedReturnValue,
   setDurationValue,
 }) {
+  const { initialInvestment, annualInvestment, expectedReturn, duration } = data;
+
   return (
     <section id="user-input">
       <div className="input-group">

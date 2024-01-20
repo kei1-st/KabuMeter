@@ -1,7 +1,7 @@
 import Header from './components/Header/Header.jsx';
-import InputScreen from './components/UserInput/UserInput.jsx';
 import Result from './components/Result/Result.jsx';
 import { useState } from 'react';
+import UserInput from './components/UserInput/UserInput.jsx';
 
 function App() {
   const [initialInvestment, setInitialInvestment] = useState(10000);
@@ -22,25 +22,24 @@ function App() {
     setDuration(Number(e.target.value));
   }
 
+  let data = {
+    initialInvestment: initialInvestment,
+    annualInvestment: annualInvestment,
+    expectedReturn: expectedReturn,
+    duration: duration,
+  };
+
   return (
     <>
       <Header />
-      <InputScreen
-        initialInvestment={initialInvestment}
-        annualInvestment={annualInvestment}
-        expectedReturn={expectedReturn}
-        duration={duration}
+      <UserInput
+        data={data}
         setInitialInvestmentValue={setInitialInvestmentValue}
         setAnnualInvestmentValue={setAnnualInvestmentValue}
         setExpectedReturnValue={setExpectedReturnValue}
         setDurationValue={setDurationValue}
       />
-      <Result
-        initialInvestment={initialInvestment}
-        annualInvestment={annualInvestment}
-        expectedReturn={expectedReturn}
-        duration={duration}
-      />
+      <Result data={data} />
     </>
   );
 }

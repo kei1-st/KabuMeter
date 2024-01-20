@@ -1,14 +1,6 @@
 import './UserInput.css';
 
-export default function UserInput({
-  data,
-  setInitialInvestmentValue,
-  setAnnualInvestmentValue,
-  setExpectedReturnValue,
-  setDurationValue,
-}) {
-  const { initialInvestment, annualInvestment, expectedReturn, duration } = data;
-
+export default function UserInput({ data, onChange }) {
   return (
     <section id="user-input">
       <div className="input-group">
@@ -17,8 +9,8 @@ export default function UserInput({
           <input
             type="number"
             required
-            value={initialInvestment}
-            onChange={setInitialInvestmentValue}
+            value={data.initialInvestment}
+            onChange={(event) => onChange('initialInvestment', event.target.value)}
           />
         </p>
         <p>
@@ -26,19 +18,29 @@ export default function UserInput({
           <input
             type="number"
             required
-            value={annualInvestment}
-            onChange={setAnnualInvestmentValue}
+            value={data.annualInvestment}
+            onChange={(event) => onChange('annualInvestment', event.target.value)}
           />
         </p>
       </div>
       <div className="input-group">
         <p>
           <label>EXPECTED RETURN</label>
-          <input type="number" required value={expectedReturn} onChange={setExpectedReturnValue} />
+          <input
+            type="number"
+            required
+            value={data.expectedReturn}
+            onChange={(event) => onChange('expectedReturn', event.target.value)}
+          />
         </p>
         <p>
           <label>DURATION</label>
-          <input type="number" required value={duration} onChange={setDurationValue} />
+          <input
+            type="number"
+            required
+            value={data.duration}
+            onChange={(event) => onChange('duration', event.target.value)}
+          />
         </p>
       </div>
     </section>

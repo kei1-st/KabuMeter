@@ -4,41 +4,26 @@ import { useState } from 'react';
 import UserInput from './components/UserInput/UserInput.jsx';
 
 function App() {
-  const [initialInvestment, setInitialInvestment] = useState(10000);
-  const [annualInvestment, setAnnualInvestment] = useState(1200);
-  const [expectedReturn, setExpectedReturn] = useState(6);
-  const [duration, setDuration] = useState(10);
+  const [data, updateValue] = useState({
+    initialInvestment: 10000,
+    annualInvestment: 1200,
+    expectedReturn: 6,
+    duration: 10,
+  });
 
-  function setInitialInvestmentValue(e) {
-    setInitialInvestment(Number(e.target.value));
+  function handleChange(key, value) {
+    updateValue((prevMap) => {
+      return {
+        ...prevMap,
+        [key]: Number(value), // ...prevMap の key の値だけ value で更新
+      };
+    });
   }
-  function setAnnualInvestmentValue(e) {
-    setAnnualInvestment(Number(e.target.value));
-  }
-  function setExpectedReturnValue(e) {
-    setExpectedReturn(Number(e.target.value));
-  }
-  function setDurationValue(e) {
-    setDuration(Number(e.target.value));
-  }
-
-  let data = {
-    initialInvestment: initialInvestment,
-    annualInvestment: annualInvestment,
-    expectedReturn: expectedReturn,
-    duration: duration,
-  };
 
   return (
     <>
       <Header />
-      <UserInput
-        data={data}
-        setInitialInvestmentValue={setInitialInvestmentValue}
-        setAnnualInvestmentValue={setAnnualInvestmentValue}
-        setExpectedReturnValue={setExpectedReturnValue}
-        setDurationValue={setDurationValue}
-      />
+      <UserInput data={data} onChange={handleChange} />
       <Result data={data} />
     </>
   );

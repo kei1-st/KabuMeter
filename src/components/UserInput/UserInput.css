@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 #user-input {
   padding: 1rem;
   max-width: 30rem;

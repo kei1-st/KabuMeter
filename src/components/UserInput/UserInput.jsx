@@ -13,7 +13,7 @@ export default function UserInput({
 }) {
   return (
     <div id="user-input">
-      <div class="input-group">
+      <div className="input-group">
         <div>
           <label>INITIAL INVESTMENT</label>
           <input type="number" value={initialInvestment} onChange={setInitialInvestmentValue} />
@@ -25,7 +25,7 @@ export default function UserInput({
           {console.log(annualInvestment)}
         </div>
       </div>
-      <div class="input-group">
+      <div className="input-group">
         <div>
           <label>EXPECTED RETURN</label>
           <input type="number" value={expectedReturn} onChange={setExpectedReturnValue} />

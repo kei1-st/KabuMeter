@@ -11,27 +11,37 @@ export default function UserInput({
   setDurationValue,
 }) {
   return (
-    <div id="user-input">
+    <section id="user-input">
       <div className="input-group">
-        <div>
+        <p>
           <label>INITIAL INVESTMENT</label>
-          <input type="number" value={initialInvestment} onChange={setInitialInvestmentValue} />
-        </div>
-        <div>
+          <input
+            type="number"
+            required
+            value={initialInvestment}
+            onChange={setInitialInvestmentValue}
+          />
+        </p>
+        <p>
           <label>ANNUAL INVESTMENT</label>
-          <input type="number" value={annualInvestment} onChange={setAnnualInvestmentValue} />
-        </div>
+          <input
+            type="number"
+            required
+            value={annualInvestment}
+            onChange={setAnnualInvestmentValue}
+          />
+        </p>
       </div>
       <div className="input-group">
-        <div>
+        <p>
           <label>EXPECTED RETURN</label>
-          <input type="number" value={expectedReturn} onChange={setExpectedReturnValue} />
-        </div>
-        <div>
+          <input type="number" required value={expectedReturn} onChange={setExpectedReturnValue} />
+        </p>
+        <p>
           <label>DURATION</label>
-          <input type="number" value={duration} onChange={setDurationValue} />
-        </div>
+          <input type="number" required value={duration} onChange={setDurationValue} />
+        </p>
       </div>
-    </div>
+    </section>
   );
 }

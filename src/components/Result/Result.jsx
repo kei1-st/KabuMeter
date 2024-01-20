@@ -14,31 +14,29 @@ export default function Result({ initialInvestment, annualInvestment, expectedRe
   let capital = initialInvestment;
 
   return (
-    <div id="result">
-      <table align="center">
-        <thead>
-          <tr>
-            {TABLE_HEADERS.map((header) => (
-              <th key={header}>{header}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {annualData.map((data) => {
-            totalInterest += data.interest;
-            capital += data.annualInvestment;
-            return (
-              <tr key={data.year}>
-                <td>{data.year}</td>
-                <td>{formatter.format(data.valueEndOfYear)}</td>
-                <td>{formatter.format(data.interest)}</td>
-                <td>{formatter.format(totalInterest)}</td>
-                <td>{formatter.format(capital)}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
+    <table id="result">
+      <thead>
+        <tr>
+          {TABLE_HEADERS.map((header) => (
+            <th key={header}>{header}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {annualData.map((data) => {
+          totalInterest += data.interest;
+          capital += data.annualInvestment;
+          return (
+            <tr key={data.year}>
+              <td>{data.year}</td>
+              <td>{formatter.format(data.valueEndOfYear)}</td>
+              <td>{formatter.format(data.interest)}</td>
+              <td>{formatter.format(totalInterest)}</td>
+              <td>{formatter.format(capital)}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
   );
 }

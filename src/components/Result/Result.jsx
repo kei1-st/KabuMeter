@@ -24,7 +24,7 @@ export default function Result({ initialInvestment, annualInvestment, expectedRe
         </thead>
         <tbody>
           {annualData.map((data) => (
-            <tr>
+            <tr key={data.year}>
               <td>{data.year}</td>
               <td>{formatter.format(data.annualInvestment)}</td>
               <td>{formatter.format(data.interest)}</td>

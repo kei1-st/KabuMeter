@@ -4,10 +4,10 @@ import Result from './components/Result/Result.jsx';
 import { useState } from 'react';
 
 function App() {
-  const [initialInvestment, setInitialInvestment] = useState(0);
-  const [annualInvestment, setAnnualInvestment] = useState(0);
-  const [expectedReturn, setExpectedReturn] = useState(0);
-  const [duration, setDuration] = useState(0);
+  const [initialInvestment, setInitialInvestment] = useState(10000);
+  const [annualInvestment, setAnnualInvestment] = useState(1200);
+  const [expectedReturn, setExpectedReturn] = useState(6);
+  const [duration, setDuration] = useState(10);
 
   function setInitialInvestmentValue(e) {
     setInitialInvestment(e.target.value);
